@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopGuardian</title>
+</head>
+<body>
+<div class="title-block">
+    <h1>StopGuardian</h1>
+    <p>v1.0.0</p>
+</div>
+<form class="article-form">
+    <select name="stop" id="stopselect">
+        <option value="1" selected>Disabled</option>
+        <option value="2">Enabled</option>
+    </select>
+</form>
+
+<p>Drag and drop the linked text below into your bookmarks bar to create the spacer bookmarklet.<br/>
+    This will allow you to temporarily have multiple tabs, allowing the exploit to work.<br/>
+    <a href="javascript:onbeforeunload=()=>0">Spacer</a><br/>
+    You should also bookmark this page.</p>
+<h1>Instructions:</h1>
+<p>
+    Keep this page enabled and open on the <strong>right side</strong> of all of your tabs, or whichever tabs you want
+    to protect.<br/>
+    If you get tab limited and didn't have this tab open, or it didn't activate while the tabs were closing, follow the
+    steps below:<br/>
+<h4>Step 1:</h4>
+<p>Open this page, as well as enough other tabs to completely fill your tab limit.</p>
+<h4>Step 2:</h4>
+<p>Right-click on your spacer bookmarklet and select "Open in new tab"</p>
+<h4>Step 3:</h4>
+<p>Enable this tab, then drag it to the right of all of your tabs.</p>
+<h4>Step 4:</h4>
+<p>Try to open a new tab, and when it asks you if you want to close this tab, select "Cancel"</p>
+<h4>Step 5:</h4>
+<p>The exploit is now active. No matter where this tab is or how many tabs you have open, as long as this tab is open
+    the tab limit will be disabled.</p>
+
+Copyright (c) JungleHornet 2025
+</p>
+
+<script>
+    onbeforeunload = () => {
+        var e = document.getElementById("stopselect");
+        var value = e.value;
+        if (value == 2) {
+            return 0;
+        }
+    }
+</script>
+</body>
+</html>
